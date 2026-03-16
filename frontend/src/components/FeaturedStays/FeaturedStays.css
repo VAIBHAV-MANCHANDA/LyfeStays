@@ -1,0 +1,60 @@
+/* ============================
+   FeaturedStays — Oasis Warm
+   ============================ */
+.featured {
+  background: var(--bg-dark);
+}
+
+.featured__filters {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.featured__filter {
+  padding: 9px 22px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-spring);
+  letter-spacing: 0.02em;
+}
+.featured__filter:hover {
+  border-color: rgba(196,96,60,0.3);
+  color: var(--earth-terracotta);
+  background: rgba(196,96,60,0.05);
+  transform: translateY(-1px);
+}
+.featured__filter--active {
+  background: var(--grad-terracotta);
+  border-color: transparent;
+  color: white;
+  box-shadow: var(--shadow-warm);
+  transform: translateY(-1px);
+}
+
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.featured__cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
+@media (max-width: 1024px) {
+  .featured__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .featured__grid { grid-template-columns: 1fr; }
+  .featured__filters { gap: 6px; }
+  .featured__filter { padding: 7px 16px; font-size: 0.8rem; }
+}

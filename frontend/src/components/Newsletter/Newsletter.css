@@ -1,0 +1,189 @@
+/* ============================
+   Newsletter — Warm & Bright
+   ============================ */
+.newsletter__card {
+  background: linear-gradient(135deg, #FFF5E8 0%, #FDEBD4 50%, #FAE0C4 100%);
+  border: 1.5px solid rgba(196,96,60,0.2);
+  border-radius: var(--radius-xl);
+  padding: 70px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Decorative top bar */
+.newsletter__card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #E91E8C, #C4603C, #CC8A1A, #00BCD4);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.newsletter__orb-1 {
+  position: absolute;
+  width: 400px; height: 400px;
+  background: rgba(233,30,140,0.08);
+  border-radius: 50%;
+  filter: blur(80px);
+  top: -100px; right: 200px;
+  pointer-events: none;
+}
+.newsletter__orb-2 {
+  position: absolute;
+  width: 300px; height: 300px;
+  background: rgba(0,188,212,0.07);
+  border-radius: 50%;
+  filter: blur(60px);
+  bottom: -80px; left: 100px;
+  pointer-events: none;
+}
+
+.newsletter__content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.newsletter__icon-wrap {
+  width: 60px; height: 60px;
+  border-radius: var(--radius-lg);
+  background: rgba(196,96,60,0.12);
+  border: 1.5px solid rgba(196,96,60,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--earth-terracotta);
+}
+
+.newsletter__title {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.newsletter__desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 440px;
+}
+
+.newsletter__form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.newsletter__input-wrap {
+  flex: 1;
+  min-width: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.newsletter__input-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+.newsletter__input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.newsletter__input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(233,30,140,0.1);
+}
+.newsletter__input::placeholder { color: var(--text-muted); }
+.newsletter__btn { white-space: nowrap; }
+
+.newsletter__success {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 24px;
+  background: rgba(61,110,42,0.1);
+  border: 1.5px solid rgba(61,110,42,0.2);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+.newsletter__success span { font-size: 1.5rem; }
+
+.newsletter__note { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Deal Cards */
+.newsletter__visual {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.newsletter__stat-cards { display: flex; flex-direction: column; gap: 12px; }
+.newsletter__stat-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: 290px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.newsletter__stat-card:hover {
+  border-color: rgba(196,96,60,0.25);
+  box-shadow: var(--shadow-md);
+  transform: translateX(-3px);
+}
+.newsletter__stat-emoji { font-size: 1.5rem; flex-shrink: 0; }
+.newsletter__stat-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.newsletter__stat-price {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.newsletter__stat-discount {
+  margin-left: auto;
+  padding: 4px 10px;
+  background: rgba(233,30,140,0.1);
+  border: 1px solid rgba(233,30,140,0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .newsletter__card { flex-direction: column; padding: 40px; gap: 32px; }
+  .newsletter__visual { width: 100%; }
+  .newsletter__stat-card { width: 100%; }
+  .newsletter__stat-cards { flex-direction: row; flex-wrap: wrap; }
+}
+@media (max-width: 640px) {
+  .newsletter__card { padding: 28px 20px; }
+  .newsletter__title { font-size: 1.7rem; }
+  .newsletter__form { flex-direction: column; }
+}

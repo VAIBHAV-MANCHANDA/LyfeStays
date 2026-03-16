@@ -1,0 +1,240 @@
+/* ============================
+   PropertyCard — Oasis Warm
+   ============================ */
+.property-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: var(--transition-spring);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.property-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+  border-color: rgba(196,96,60,0.2);
+}
+
+/* Image */
+.property-card__image-wrap {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  background: var(--bg-stone);
+  flex-shrink: 0;
+}
+.property-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.property-card:hover .property-card__image {
+  transform: scale(1.06);
+}
+
+/* Skeleton loader */
+.property-card__skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--bg-stone) 25%, var(--earth-linen) 50%, var(--bg-stone) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Badges on image */
+.property-card__badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.property-card__tag {
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.property-card__tag--hot {
+  background: var(--grad-terracotta);
+  color: white;
+  box-shadow: 0 3px 10px rgba(196,96,60,0.4);
+}
+.property-card__tag--new {
+  background: var(--grad-secondary);
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,188,212,0.35);
+}
+.property-card__tag--rent {
+  background: rgba(22,48,32,0.85);
+  color: #B6D4BE;
+  backdrop-filter: blur(8px);
+}
+.property-card__tag--buy {
+  background: rgba(201,160,106,0.85);
+  color: #1C0E00;
+  backdrop-filter: blur(8px);
+}
+
+/* Wishlist */
+.property-card__wishlist {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(253,249,243,0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(150,110,70,0.15);
+  cursor: pointer;
+  transition: var(--transition-spring);
+  color: var(--text-muted);
+}
+.property-card__wishlist:hover {
+  background: white;
+  transform: scale(1.12);
+  box-shadow: 0 4px 16px rgba(233,30,140,0.25);
+}
+.property-card__wishlist--active {
+  color: var(--primary);
+  background: white;
+}
+
+
+
+/* Body */
+.property-card__body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+/* Rating */
+.property-card__rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.property-card__stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.property-card__star { color: var(--gold); }
+.property-card__reviews {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 4px;
+  font-weight: 400;
+}
+.property-card__host {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.property-card__host img {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--earth-sand);
+}
+
+/* Title */
+.property-card__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* Location */
+.property-card__location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.property-card__location svg { color: var(--earth-terracotta); font-size: 0.85rem; }
+
+/* Amenities */
+.property-card__amenities {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.property-card__amenity {
+  padding: 4px 10px;
+  background: rgba(196,96,60,0.08);
+  border: 1px solid rgba(196,96,60,0.15);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  color: var(--earth-terracotta);
+  font-weight: 600;
+}
+
+/* Price Row */
+.property-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.property-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.property-card__amount {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+.property-card__unit {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.property-card__book-btn {
+  padding: 8px 20px;
+  background: var(--grad-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-spring);
+  border: none;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 16px rgba(233,30,140,0.28);
+}
+.property-card__book-btn:hover {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(233,30,140,0.4);
+}

@@ -1,0 +1,118 @@
+/* Buy Page — Oasis Bright */
+.buy__hero {
+  position: relative;
+  padding: 140px 0 60px; overflow: hidden;
+  background: linear-gradient(145deg, #FFF8EE 0%, #FDEEE0 50%, #FAE5CC 100%);
+}
+.buy__hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 30%, rgba(204,138,26,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 70%, rgba(233,30,140,0.09) 0%, transparent 55%);
+}
+.buy__hero-inner {
+  position: relative; z-index: 2;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.buy__hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.buy__hero-sub { color: var(--text-secondary); font-size: 1.05rem; max-width: 540px; }
+.buy__search-row { display: flex; gap: 12px; width: 100%; max-width: 600px; }
+.buy__search-wrap {
+  flex: 1; display: flex; align-items: center; gap: 10px;
+  padding: 13px 18px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-muted);
+}
+.buy__search-input {
+  flex: 1; background: transparent; border: none;
+  color: var(--text-primary); font-size: 0.9rem;
+}
+.buy__search-input::placeholder { color: var(--text-muted); }
+
+/* Investment Strip */
+.buy__investment-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 20px; padding: 32px 0;
+  border-bottom: 1px solid var(--border); margin-bottom: 32px;
+}
+.buy__stat {
+  display: flex; align-items: center; gap: 14px;
+  padding: 20px 24px;
+  background: white; border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.buy__stat:hover { border-color: rgba(196,96,60,0.25); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.buy__stat-icon { font-size: 1.6rem; }
+.buy__stat-value { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; }
+.buy__stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+.buy__cats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+
+/* EMI */
+.buy__emi {
+  background: white; border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl); padding: 40px;
+  margin: 40px 0; box-shadow: var(--shadow-md);
+  position: relative; overflow: hidden;
+}
+.buy__emi::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--earth-amber), var(--earth-terracotta));
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+.buy__emi-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem; font-weight: 600; color: var(--text-primary); margin-bottom: 28px;
+  display: flex; align-items: center; gap: 10px;
+}
+.buy__emi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 24px; }
+.buy__emi-field { display: flex; flex-direction: column; gap: 8px; }
+.buy__emi-field label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 700; }
+.buy__emi-value { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.03em; }
+.buy__emi-range { width: 100%; accent-color: var(--earth-amber); }
+.buy__emi-result {
+  display: flex; gap: 24px; padding: 24px;
+  background: linear-gradient(135deg, rgba(204,138,26,0.07) 0%, rgba(196,96,60,0.05) 100%);
+  border: 1.5px solid rgba(204,138,26,0.2);
+  border-radius: var(--radius-lg); margin-bottom: 12px;
+}
+.buy__emi-result-item { display: flex; flex-direction: column; gap: 4px; }
+.buy__emi-result-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+.buy__emi-result-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--text-primary); }
+.buy__emi-note { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Benefits */
+.buy__benefits { padding: 60px 0; border-top: 1px solid var(--border); }
+.buy__benefits-header { text-align: center; margin-bottom: 44px; }
+.buy__benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.buy__benefit-card {
+  background: white; border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px 22px;
+  transition: var(--transition-spring);
+}
+.buy__benefit-card:hover { border-color: rgba(204,138,26,0.25); transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+.buy__benefit-icon { font-size: 2rem; display: block; margin-bottom: 14px; }
+.buy__benefit-card h4 { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.buy__benefit-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
+
+@media (max-width: 1024px) {
+  .buy__investment-strip { grid-template-columns: repeat(2, 1fr); }
+  .buy__benefits-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .buy__investment-strip { grid-template-columns: 1fr; }
+  .buy__benefits-grid { grid-template-columns: 1fr; }
+  .buy__emi-row { grid-template-columns: 1fr; }
+  .buy__emi-result { flex-direction: column; gap: 16px; }
+}

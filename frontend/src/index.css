@@ -1,0 +1,420 @@
+/* ===========================
+   LyfeStays Global Index CSS
+   Oasis — Warm Luxury Theme
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  /* === Logo Accent Colors (sparingly, as vibrant highlights) === */
+  --primary:         #E91E8C;
+  --primary-light:   #FF5CB8;
+  --primary-dark:    #B5006C;
+  --secondary:       #00BCD4;
+  --secondary-light: #26D4E8;
+  --secondary-dark:  #0097A7;
+
+  /* === Oasis Warm Core Backgrounds === */
+  --bg-dark:       #F7F2EA;   /* warm ivory — main page bg */
+  --bg-surface:    #FDF9F3;   /* slightly lighter ivory */
+  --bg-card:       #FFFDF8;   /* cream white card bg */
+  --bg-card-hover: #FFF6E8;   /* warm amber hover */
+  --bg-overlay:    rgba(247,242,234,0.95);
+  --bg-deep:       #1E120A;   /* deep espresso — hero dark sections */
+  --bg-sand:       #E4D9C4;   /* sandy tan */
+  --bg-oasis:      #163020;   /* deep oasis forest green */
+  --bg-stone:      #EDE5D5;   /* warm stone */
+
+  /* === Earthy Accent Palette === */
+  --earth-terracotta: #C4603C;
+  --earth-amber:      #CC8A1A;
+  --earth-sage:       #4D6B50;
+  --earth-clay:       #935228;
+  --earth-sand:       #C2A06A;
+  --earth-cream:      #EEE0C8;
+  --earth-linen:      #E8D8BC;
+  --earth-dune:       #B09A7E;
+  --earth-moss:       #6B7A42;
+
+  /* === Text === */
+  --text-primary:   #1C0E00;   /* deep warm espresso */
+  --text-secondary: #5A4228;   /* warm chestnut */
+  --text-muted:     #9C8768;   /* muted sand brown */
+  --text-inverse:   #F8F4EE;   /* cream text on dark */
+  --text-accent:    #C4603C;   /* terracotta accent */
+
+  /* === Borders === */
+  --border:        rgba(150,110,70,0.14);
+  --border-warm:   rgba(196,96,60,0.2);
+  --border-dark:   rgba(30,18,10,0.08);
+  --border-accent: rgba(233,30,140,0.28);
+
+  /* === Gradients === */
+  --grad-primary:    linear-gradient(135deg, #E91E8C 0%, #B5006C 100%);
+  --grad-secondary:  linear-gradient(135deg, #00BCD4 0%, #0097A7 100%);
+  --grad-oasis:      linear-gradient(135deg, #163020 0%, #0E2017 100%);
+  --grad-warm:       linear-gradient(135deg, #F7F2EA 0%, #EEE0C8 100%);
+  --grad-terracotta: linear-gradient(135deg, #C4603C 0%, #935228 100%);
+  --grad-amber:      linear-gradient(135deg, #CC8A1A 0%, #A56A10 100%);
+  --grad-sand:       linear-gradient(135deg, #E4D9C4 0%, #D0C0A0 100%);
+  --grad-hero:       linear-gradient(150deg, #163020 0%, #1E3820 40%, #0E2017 100%);
+  --grad-card:       linear-gradient(145deg, #FFFDF8 0%, #FFF5E4 100%);
+  --grad-glow-pink:  radial-gradient(circle, rgba(233,30,140,0.08) 0%, transparent 70%);
+  --grad-glow-teal:  radial-gradient(circle, rgba(0,188,212,0.07) 0%, transparent 70%);
+  --grad-glow-warm:  radial-gradient(circle, rgba(196,96,60,0.1) 0%, transparent 70%);
+
+  /* === Special Accents === */
+  --gold:    #C2A06A;   /* warm sand gold */
+  --success: #3D6E2A;   /* forest green */
+  --danger:  #B83A28;   /* warm red */
+
+  /* === Warm Earthy Shadows === */
+  --shadow-sm:   0 1px 4px rgba(100,60,20,0.07);
+  --shadow-md:   0 4px 20px rgba(100,60,20,0.1);
+  --shadow-lg:   0 8px 40px rgba(100,60,20,0.14);
+  --shadow-xl:   0 20px 80px rgba(100,60,20,0.16);
+  --shadow-pink: 0 8px 32px rgba(233,30,140,0.28);
+  --shadow-teal: 0 8px 32px rgba(0,188,212,0.18);
+  --shadow-card: 0 2px 16px rgba(100,60,20,0.08), 0 1px 4px rgba(100,60,20,0.05);
+  --shadow-warm: 0 8px 40px rgba(196,96,60,0.22);
+  --shadow-lift: 0 12px 48px rgba(100,60,20,0.15), 0 4px 12px rgba(100,60,20,0.08);
+
+  /* === Spacing === */
+  --container-max: 1280px;
+  --section-pad:    100px;
+  --section-pad-sm: 60px;
+
+  /* === Border Radius === */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-full: 9999px;
+
+  /* === Typography === */
+  --font-body:    'Outfit', sans-serif;
+  --font-heading: 'Cormorant Garamond', 'Playfair Display', serif;
+
+  /* === Transitions === */
+  --transition:        all 0.3s cubic-bezier(0.4,0,0.2,1);
+  --transition-slow:   all 0.5s cubic-bezier(0.4,0,0.2,1);
+  --transition-spring: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-stone); }
+::-webkit-scrollbar-thumb { background: var(--earth-sand); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--earth-terracotta); }
+
+/* Links */
+a { color: inherit; text-decoration: none; transition: var(--transition); }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; outline: none; font-family: var(--font-body); }
+input, textarea, select { font-family: var(--font-body); outline: none; }
+
+/* ===================== */
+/* Layout               */
+/* ===================== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.section { padding: var(--section-pad) 0; }
+
+/* Section variants */
+.section-warm {
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-stone) 100%);
+}
+.section-sand {
+  background: linear-gradient(180deg, var(--earth-cream) 0%, var(--earth-linen) 100%);
+}
+.section-oasis {
+  background: var(--grad-oasis);
+}
+
+/* ===================== */
+/* Section Header       */
+/* ===================== */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196,96,60,0.1);
+  border: 1px solid rgba(196,96,60,0.22);
+  color: var(--earth-terracotta);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ===================== */
+/* Gradient Text        */
+/* ===================== */
+.gradient-text {
+  background: var(--grad-terracotta);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-teal {
+  background: var(--grad-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-amber {
+  background: var(--grad-amber);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-pink {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===================== */
+/* Buttons              */
+/* ===================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  background: var(--grad-primary);
+  color: white;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-spring);
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-pink);
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 44px rgba(233,30,140,0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  background: transparent;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.03em;
+}
+.btn-secondary:hover {
+  border-color: var(--earth-terracotta);
+  color: var(--earth-terracotta);
+  background: rgba(196,96,60,0.06);
+}
+
+.btn-warm {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  background: var(--grad-terracotta);
+  color: white;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-spring);
+  box-shadow: var(--shadow-warm);
+  letter-spacing: 0.04em;
+}
+.btn-warm:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 44px rgba(196,96,60,0.38);
+}
+
+.btn-oasis {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  background: var(--grad-oasis);
+  color: white;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-spring);
+  letter-spacing: 0.04em;
+}
+.btn-oasis:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 44px rgba(22,48,32,0.4);
+}
+
+.btn-teal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  background: var(--grad-secondary);
+  color: white;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-spring);
+  box-shadow: var(--shadow-teal);
+  letter-spacing: 0.04em;
+}
+.btn-teal:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 44px rgba(0,188,212,0.38);
+}
+
+/* ===================== */
+/* Badges               */
+/* ===================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge-pink {
+  background: rgba(233,30,140,0.1);
+  border: 1px solid rgba(233,30,140,0.25);
+  color: var(--primary-dark);
+}
+.badge-teal {
+  background: rgba(0,188,212,0.1);
+  border: 1px solid rgba(0,188,212,0.25);
+  color: var(--secondary-dark);
+}
+.badge-gold {
+  background: rgba(194,160,106,0.15);
+  border: 1px solid rgba(194,160,106,0.3);
+  color: var(--earth-clay);
+}
+.badge-warm {
+  background: rgba(196,96,60,0.1);
+  border: 1px solid rgba(196,96,60,0.22);
+  color: var(--earth-terracotta);
+}
+.badge-sage {
+  background: rgba(77,107,80,0.1);
+  border: 1px solid rgba(77,107,80,0.22);
+  color: var(--earth-sage);
+}
+
+/* Stars */
+.stars { display: flex; gap: 2px; color: var(--gold); }
+
+/* Divider */
+.divider { height: 1px; background: var(--border); }
+
+/* Glass card — warm */
+.glass-card {
+  background: rgba(255,253,248,0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(150,110,70,0.12);
+  border-radius: var(--radius-lg);
+}
+
+/* Page wrapper */
+.page {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: var(--bg-dark);
+}
+
+/* Oasis ornamental divider */
+.oasis-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+.oasis-divider::before,
+.oasis-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+.oasis-divider span { color: var(--earth-sand); font-size: 1.1rem; }
+
+/* Grid utilities */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+
+@media (max-width: 768px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-2 { grid-template-columns: 1fr; }
+  .section { padding: var(--section-pad-sm) 0; }
+  .section-title { font-size: 2rem; }
+}
