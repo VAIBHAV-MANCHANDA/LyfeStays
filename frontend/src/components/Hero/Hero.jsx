@@ -1,32 +1,108 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiSearch, FiMapPin, FiCalendar, FiUsers } from 'react-icons/fi';
+import { DateRange } from 'react-date-range';
+import { format } from 'date-fns';
+import {
+  FiSearch,
+  FiMapPin,
+  FiCalendar,
+  FiUsers,
+  FiMinus,
+  FiPlus,
+} from 'react-icons/fi';
 import { MdOutlineTravelExplore } from 'react-icons/md';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 import './Hero.css';
 
 const stats = [
   { value: '15,000+', label: 'Verified Stays' },
   { value: '98%', label: 'Happy Travellers' },
   { value: '250+', label: 'Destinations' },
-  { value: '₹0', label: 'Booking Fees' },
+  { value: 'Rs 0', label: 'Booking Fees' },
 ];
 
 export default function Hero() {
   const navigate = useNavigate();
+  const calendarRef = useRef(null);
   const [activeTab, setActiveTab] = useState('rent');
   const [destination, setDestination] = useState('');
-  const [checkin, setCheckin] = useState('');
-  const [checkout, setCheckout] = useState('');
   const [guests, setGuests] = useState(2);
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [focusedRange, setFocusedRange] = useState([0, 0]);
+  const [selectionRange, setSelectionRange] = useState({
+    startDate: null,
+    endDate: null,
+    key: 'selection',
+  });
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    navigate(`/${activeTab}?q=${destination}`);
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (calendarRef.current && !calendarRef.current.contains(event.target)) {
+        setCalendarOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, []);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+
+    const params = new URLSearchParams();
+
+    if (destination) params.set('q', destination);
+    if (selectionRange.startDate) {
+      params.set('checkin', format(selectionRange.startDate, 'yyyy-MM-dd'));
+    }
+    if (selectionRange.endDate) {
+      params.set('checkout', format(selectionRange.endDate, 'yyyy-MM-dd'));
+    }
+    params.set('guests', String(guests));
+
+    navigate(`/${activeTab}?${params.toString()}`);
+  };
+
+  const openCalendar = (step) => {
+    setFocusedRange([0, step]);
+    setCalendarOpen(true);
+  };
+
+  const handleDateChange = (ranges) => {
+    const nextRange = ranges.selection;
+    setSelectionRange(nextRange);
+
+    if (focusedRange[1] === 0) {
+      setFocusedRange([0, 1]);
+      return;
+    }
+
+    setCalendarOpen(false);
+  };
+
+  const formatFieldDate = (value) => {
+    if (!value) {
+      return 'Add date';
+    }
+
+    return format(value, 'dd MMM');
+  };
+
+  const formatRangeLabel = () => {
+    if (!selectionRange.startDate && !selectionRange.endDate) {
+      return 'Add your stay dates';
+    }
+
+    if (selectionRange.startDate && !selectionRange.endDate) {
+      return `${format(selectionRange.startDate, 'dd MMM')} - Add checkout`;
+    }
+
+    return `${format(selectionRange.startDate, 'dd MMM')} - ${format(selectionRange.endDate, 'dd MMM')}`;
   };
 
   return (
     <section className="hero">
-      {/* Animated Background */}
       <div className="hero__bg">
         <div className="hero__orb hero__orb--1" />
         <div className="hero__orb hero__orb--2" />
@@ -34,7 +110,6 @@ export default function Hero() {
       </div>
 
       <div className="hero__content container">
-        {/* ── Centered Copy ── */}
         <div className="hero__eyebrow">
           <MdOutlineTravelExplore />
           <span>India's Most Loved Stay Platform</span>
@@ -50,14 +125,14 @@ export default function Hero() {
           homestays across India's most breathtaking destinations.
         </p>
 
-        {/* ── Search Box ── */}
-        <div className="hero__search-box">
+        <div className="hero__search-box" ref={calendarRef}>
           <div className="hero__tabs">
             {[
-              { key: 'rent', label: '🏕️ Rent a Stay' },
-              { key: 'buy', label: '🏠 Buy Property' },
+              { key: 'rent', label: 'Rent a Stay' },
+              { key: 'buy', label: 'Buy Property' },
             ].map(({ key, label }) => (
               <button
+                type="button"
                 key={key}
                 className={`hero__tab ${activeTab === key ? 'hero__tab--active' : ''}`}
                 onClick={() => setActiveTab(key)}
@@ -68,7 +143,6 @@ export default function Hero() {
           </div>
 
           <form className="hero__form" onSubmit={handleSearch}>
-            {/* Where to */}
             <div className="hero__field hero__field--wide">
               <FiMapPin className="hero__field-icon" />
               <div className="hero__field-body">
@@ -76,91 +150,135 @@ export default function Hero() {
                 <input
                   type="text"
                   className="hero__input"
-                  placeholder="Manali, Goa, Rishikesh…"
+                  placeholder="Manali, Goa, Rishikesh..."
                   value={destination}
-                  onChange={(e) => setDestination(e.target.value)}
+                  onChange={(event) => setDestination(event.target.value)}
                 />
               </div>
             </div>
             <div className="hero__divider-v" />
-            {/* Check-in */}
-            <div className="hero__field">
+
+            <button
+              type="button"
+              className={`hero__field hero__field-button ${calendarOpen && focusedRange[1] === 0 ? 'hero__field-button--active' : ''}`}
+              onClick={() => openCalendar(0)}
+            >
               <FiCalendar className="hero__field-icon" />
               <div className="hero__field-body">
                 <span className="hero__field-label">Check-in</span>
-                <input
-                  type="date"
-                  className="hero__input hero__date-input"
-                  value={checkin}
-                  onChange={(e) => setCheckin(e.target.value)}
-                />
+                <span className="hero__date-display">{formatFieldDate(selectionRange.startDate)}</span>
               </div>
-            </div>
+            </button>
+
             <div className="hero__divider-v" />
-            {/* Check-out */}
-            <div className="hero__field">
+
+            <button
+              type="button"
+              className={`hero__field hero__field-button ${calendarOpen && focusedRange[1] === 1 ? 'hero__field-button--active' : ''}`}
+              onClick={() => openCalendar(1)}
+            >
               <FiCalendar className="hero__field-icon" />
               <div className="hero__field-body">
                 <span className="hero__field-label">Check-out</span>
-                <input
-                  type="date"
-                  className="hero__input hero__date-input"
-                  value={checkout}
-                  onChange={(e) => setCheckout(e.target.value)}
-                />
+                <span className="hero__date-display">{formatFieldDate(selectionRange.endDate)}</span>
               </div>
-            </div>
+            </button>
+
             <div className="hero__divider-v" />
-            {/* Guests */}
+
             <div className="hero__field">
               <FiUsers className="hero__field-icon" />
               <div className="hero__field-body">
                 <span className="hero__field-label">Guests</span>
-                <select
-                  className="hero__input hero__select"
-                  value={guests}
-                  onChange={(e) => setGuests(e.target.value)}
-                >
-                  {[1,2,3,4,5,6,8,10,12].map(n => (
-                    <option key={n} value={n}>{n} {n === 1 ? 'Guest' : 'Guests'}</option>
-                  ))}
-                </select>
+                <div className="hero__counter">
+                  <button
+                    type="button"
+                    className="hero__counter-btn"
+                    onClick={() => setGuests((current) => Math.max(1, current - 1))}
+                    aria-label="Decrease guests"
+                  >
+                    <FiMinus />
+                  </button>
+                  <span className="hero__counter-value">{guests}</span>
+                  <button
+                    type="button"
+                    className="hero__counter-btn"
+                    onClick={() => setGuests((current) => Math.min(12, current + 1))}
+                    aria-label="Increase guests"
+                  >
+                    <FiPlus />
+                  </button>
+                </div>
               </div>
             </div>
-            {/* Search button */}
+
             <button type="submit" className="hero__search-btn">
               <FiSearch />
               <span>Search</span>
             </button>
           </form>
 
-          {/* Popular */}
+          {calendarOpen && (
+            <div className="hero__calendar-popup">
+              <div className="hero__calendar-header">
+                <div>
+                  <p className="hero__calendar-title">Choose your stay dates</p>
+                  <p className="hero__calendar-subtitle">{formatRangeLabel()}</p>
+                </div>
+                <button
+                  type="button"
+                  className="hero__calendar-close"
+                  onClick={() => setCalendarOpen(false)}
+                >
+                  Done
+                </button>
+              </div>
+
+              <DateRange
+                ranges={[selectionRange]}
+                onChange={handleDateChange}
+                focusedRange={focusedRange}
+                onRangeFocusChange={setFocusedRange}
+                moveRangeOnFirstSelection={false}
+                editableDateInputs={false}
+                months={2}
+                direction="horizontal"
+                minDate={new Date()}
+                rangeColors={['#e8612d']}
+                showDateDisplay={false}
+                showMonthAndYearPickers={false}
+              />
+            </div>
+          )}
+
           <div className="hero__popular">
             <span className="hero__popular-label">Popular:</span>
-            {['Goa Beaches', 'Manali', 'Rishikesh', 'Ladakh', 'Kerala'].map((s) => (
+            {['Goa Beaches', 'Manali', 'Rishikesh', 'Ladakh', 'Kerala'].map((item) => (
               <button
-                key={s}
+                type="button"
+                key={item}
                 className="hero__popular-tag"
-                onClick={() => { setDestination(s); navigate(`/${activeTab}?q=${s}`); }}
+                onClick={() => {
+                  setDestination(item);
+                  navigate(`/${activeTab}?q=${item}`);
+                }}
               >
-                {s}
+                {item}
               </button>
             ))}
           </div>
         </div>
 
-        {/* ── Stats ── */}
         <div className="hero__stats">
-          {stats.map((s) => (
-            <div key={s.label} className="hero__stat">
-              <span className="hero__stat-value">{s.value}</span>
-              <span className="hero__stat-label">{s.label}</span>
+          {stats.map((item) => (
+            <div key={item.label} className="hero__stat">
+              <span className="hero__stat-value">{item.value}</span>
+              <span className="hero__stat-label">{item.label}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="hero__scroll">
         <div className="hero__scroll-mouse">
           <div className="hero__scroll-dot" />

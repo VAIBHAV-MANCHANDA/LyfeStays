@@ -1,13 +1,10 @@
-/* ============================
-   Floating Search Bar
-   ============================ */
 .floating-search {
   position: fixed;
-  top: 72px; /* below navbar */
+  top: 72px;
   left: 50%;
   transform: translateX(-50%) translateY(-20px);
   z-index: 999;
-  width: min(820px, 94vw);
+  width: min(980px, 94vw);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -19,21 +16,27 @@
   transform: translateX(-50%) translateY(0);
 }
 
-/* Outer pill container */
+.floating-search__shell {
+  position: relative;
+  z-index: 4;
+  overflow: visible;
+}
+
 .floating-search__bar {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   background: white;
   border-radius: 60px;
   box-shadow:
-    0 8px 32px rgba(0,0,0,0.18),
-    0 2px 8px rgba(0,0,0,0.08);
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 8px 8px 8px 24px;
   gap: 0;
   overflow: hidden;
 }
 
-/* Each input field section */
 .floating-search__field {
   display: flex;
   align-items: center;
@@ -43,14 +46,30 @@
   padding: 6px 16px 6px 4px;
   border-radius: 40px;
   transition: background 0.2s ease;
-  cursor: pointer;
 }
+
 .floating-search__field:hover {
-  background: rgba(0,0,0,0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
+
 .floating-search__field--date {
-  flex: 0 0 130px;
-  position: relative;
+  flex: 0 0 150px;
+}
+
+.floating-search__field--guests {
+  flex: 0 0 180px;
+}
+
+.floating-search__field-button {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.floating-search__field-button--active {
+  background: rgba(232, 97, 45, 0.08);
 }
 
 .floating-search__field-icon {
@@ -62,7 +81,7 @@
 .floating-search__field-body {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
   min-width: 0;
   flex: 1;
 }
@@ -85,31 +104,45 @@
   font-family: inherit;
   width: 100%;
   padding: 0;
-  cursor: pointer;
-}
-.floating-search__input::placeholder {
-  color: #aaa;
 }
 
-/* Date input hidden — overlaid by display span */
-.floating-search__date {
-  position: absolute;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  top: 0; left: 0;
-  cursor: pointer;
-  z-index: 2;
+.floating-search__input::placeholder {
+  color: #aaa;
 }
 
 .floating-search__date-display {
   font-size: 0.875rem;
   color: #555;
-  pointer-events: none;
   white-space: nowrap;
 }
 
-/* Arrow between dates */
+.floating-search__counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.floating-search__counter-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(196, 96, 60, 0.18);
+  background: rgba(196, 96, 60, 0.08);
+  color: #9d4e2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.floating-search__counter-value {
+  min-width: 18px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #43352b;
+}
+
 .floating-search__arrow {
   font-size: 1rem;
   color: #bbb;
@@ -117,22 +150,20 @@
   margin: 0 4px;
 }
 
-/* Divider */
 .floating-search__divider {
   width: 1px;
   height: 32px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
   margin: 0 8px;
 }
 
-/* Orange search button */
 .floating-search__btn {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 14px 26px;
-  background: linear-gradient(135deg, #E8612D 0%, #D44E1A 100%);
+  background: linear-gradient(135deg, #e8612d 0%, #d44e1a 100%);
   color: white;
   border: none;
   border-radius: 50px;
@@ -144,53 +175,187 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 6px 20px rgba(232, 97, 45, 0.4);
 }
+
 .floating-search__btn:hover {
   transform: scale(1.04);
   box-shadow: 0 10px 28px rgba(232, 97, 45, 0.5);
 }
 
-/* Tagline strip below the bar */
+.floating-search__calendar-popup {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(760px, 96vw);
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(34, 24, 14, 0.18);
+  border: 1px solid rgba(125, 94, 71, 0.08);
+  overflow: hidden;
+  z-index: 25;
+}
+
+.floating-search__calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px 12px;
+}
+
+.floating-search__calendar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d241d;
+}
+
+.floating-search__calendar-subtitle {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #7d6a5a;
+}
+
+.floating-search__calendar-close {
+  border: none;
+  background: rgba(232, 97, 45, 0.1);
+  color: #c25324;
+  font-weight: 700;
+  font-size: 0.84rem;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.floating-search__calendar-popup .rdrDateRangeWrapper {
+  width: 100%;
+  color: #2d241d;
+}
+
+.floating-search__calendar-popup .rdrMonthAndYearWrapper {
+  padding: 0 24px 8px;
+}
+
+.floating-search__calendar-popup .rdrMonths {
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px 18px;
+}
+
+.floating-search__calendar-popup .rdrMonth {
+  width: 100%;
+  max-width: 340px;
+  padding: 0 12px 12px;
+}
+
+.floating-search__calendar-popup .rdrMonthName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d241d;
+}
+
+.floating-search__calendar-popup .rdrWeekDay {
+  color: #a68c77;
+  font-weight: 700;
+}
+
+.floating-search__calendar-popup .rdrDayNumber span {
+  color: #3b2f27;
+  font-weight: 500;
+}
+
+.floating-search__calendar-popup .rdrDayPassive {
+  pointer-events: none;
+}
+
+.floating-search__calendar-popup .rdrDayPassive .rdrDayNumber span,
+.floating-search__calendar-popup .rdrDayPassive .rdrInRange,
+.floating-search__calendar-popup .rdrDayPassive .rdrStartEdge,
+.floating-search__calendar-popup .rdrDayPassive .rdrEndEdge {
+  visibility: hidden;
+}
+
+.floating-search__calendar-popup .rdrDayToday .rdrDayNumber span::after {
+  background: #e8612d;
+}
+
+.floating-search__calendar-popup .rdrStartEdge,
+.floating-search__calendar-popup .rdrEndEdge,
+.floating-search__calendar-popup .rdrInRange {
+  color: #e8612d;
+}
+
+.floating-search__calendar-popup .rdrDayStartPreview,
+.floating-search__calendar-popup .rdrDayInPreview,
+.floating-search__calendar-popup .rdrDayEndPreview {
+  border-color: #e8612d;
+}
+
 .floating-search__tagline {
   background: rgba(30, 20, 10, 0.82);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border-radius: 0 0 18px 18px;
   padding: 8px 24px;
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 500;
   letter-spacing: 0.01em;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .floating-search {
     top: 60px;
     width: 96vw;
   }
+
   .floating-search__bar {
     flex-wrap: wrap;
-    padding: 12px 12px;
+    padding: 12px;
     border-radius: 20px;
     gap: 8px;
   }
-  .floating-search__field {
-    flex: 1 1 auto;
-    padding: 6px 8px;
+
+  .floating-search__field,
+  .floating-search__field--date,
+  .floating-search__field--guests {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 140px;
+    padding: 10px 12px;
   }
-  .floating-search__field--date {
-    flex: 0 0 auto;
-  }
-  .floating-search__divider {
+
+  .floating-search__divider,
+  .floating-search__arrow {
     display: none;
   }
+
   .floating-search__btn {
     width: 100%;
     justify-content: center;
   }
+
+  .floating-search__calendar-popup {
+    width: 100%;
+    left: 0;
+    transform: none;
+    border-radius: 20px;
+  }
+
+  .floating-search__calendar-header {
+    padding: 18px 18px 8px;
+  }
+
+  .floating-search__calendar-popup .rdrMonths {
+    flex-direction: column;
+    padding: 0 6px 16px;
+  }
+
+  .floating-search__calendar-popup .rdrMonth {
+    max-width: none;
+    width: 100%;
+  }
+
   .floating-search__tagline {
     border-radius: 0 0 12px 12px;
     font-size: 0.7rem;

@@ -43,6 +43,7 @@ export default function PropertyCard({ property, variant = 'default' }) {
 
         {/* Wishlist */}
         <button
+          type="button"
           className={`property-card__wish ${liked ? 'property-card__wish--active' : ''}`}
           onClick={(e) => { e.preventDefault(); setLiked(!liked); }}
           aria-label="Add to wishlist"

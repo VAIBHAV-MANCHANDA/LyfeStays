@@ -37,6 +37,7 @@ export default function FeaturedStays() {
         <div className="featured__filters">
           {FILTERS.map((f) => (
             <button
+              type="button"
               key={f}
               className={`featured__filter ${activeFilter === f ? 'featured__filter--active' : ''}`}
               onClick={() => setActiveFilter(f)}

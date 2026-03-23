@@ -3,6 +3,8 @@
    (Matching Oasis Warm Theme)
    ============================ */
 .destinations {
+  position: relative;
+  z-index: 1;
   background: linear-gradient(180deg, var(--earth-cream) 0%, var(--earth-linen) 100%);
   overflow: hidden;
 }

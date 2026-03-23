@@ -101,6 +101,12 @@
 .auth__field label { font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.09em; color: var(--text-muted); }
 .auth__forgot { font-size: 0.78rem; color: var(--earth-terracotta); transition: var(--transition); }
 .auth__forgot:hover { text-decoration: underline; }
+.auth__forgot-btn {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
 
 .auth__input-wrap { position: relative; display: flex; align-items: center; }
 .auth__input-icon { position: absolute; left: 14px; color: var(--text-muted); font-size: 1rem; }
@@ -133,6 +139,23 @@
 .auth__terms { font-size: 0.75rem; color: var(--text-muted); text-align: center; line-height: 1.6; }
 .auth__terms a { color: var(--earth-terracotta); }
 .auth__terms a:hover { text-decoration: underline; }
+.auth__alert {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.auth__alert--error {
+  background: rgba(201, 58, 58, 0.08);
+  border: 1px solid rgba(201, 58, 58, 0.18);
+  color: #9e2b2b;
+}
+.auth__alert--success {
+  background: rgba(41, 133, 88, 0.08);
+  border: 1px solid rgba(41, 133, 88, 0.16);
+  color: #1d6b44;
+}
 
 /* Role Selector */
 .auth__roles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
