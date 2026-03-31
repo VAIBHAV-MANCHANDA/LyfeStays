@@ -42,7 +42,7 @@
   flex-shrink: 0;
 }
 .navbar__logo img {
-  height: 44px; width: auto;
+  height: 64px; width: auto;
   object-fit: contain;
 }
 
