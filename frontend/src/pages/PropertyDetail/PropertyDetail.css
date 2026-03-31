@@ -39,8 +39,8 @@
   cursor: pointer; transition: var(--transition);
   box-shadow: var(--shadow-sm);
 }
-.detail__action-btn:hover { border-color: rgba(196,96,60,0.3); color: var(--earth-terracotta); }
-.detail__action-btn--liked { color: var(--primary); border-color: rgba(233,30,140,0.3); }
+.detail__action-btn:hover { border-color: rgba(43,87,24,0.3); color: var(--secondary); }
+.detail__action-btn--liked { color: var(--primary); border-color: rgba(212,160,23,0.35); }
 
 /* Gallery */
 .detail__gallery { margin-bottom: 40px; }
@@ -75,7 +75,7 @@
   cursor: pointer; transition: var(--transition); background: var(--bg-stone);
 }
 .detail__thumb img { width: 100%; height: 100%; object-fit: cover; }
-.detail__thumb--active { border-color: var(--earth-terracotta); box-shadow: 0 0 0 1px rgba(196,96,60,0.3); }
+.detail__thumb--active { border-color: var(--secondary); box-shadow: 0 0 0 1px rgba(43,87,24,0.3); }
 
 /* Main Grid */
 .detail__grid {
@@ -108,7 +108,7 @@
   font-weight: 700; color: var(--text-secondary);
   cursor: pointer; transition: var(--transition); white-space: nowrap;
 }
-.detail__host-contact:hover { border-color: rgba(196,96,60,0.3); color: var(--earth-terracotta); }
+.detail__host-contact:hover { border-color: rgba(43,87,24,0.3); color: var(--secondary); }
 
 .detail__description { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8; }
 
@@ -121,7 +121,7 @@
   font-size: 0.85rem; color: var(--text-secondary);
   transition: var(--transition);
 }
-.detail__amenity:hover { border-color: rgba(196,96,60,0.25); color: var(--text-primary); }
+.detail__amenity:hover { border-color: rgba(43,87,24,0.25); color: var(--text-primary); }
 .detail__amenity-icon { font-size: 1.1rem; }
 
 /* Rules */
@@ -155,7 +155,7 @@
   content: '';
   position: absolute; top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #E91E8C, #C4603C, #00BCD4);
+  background: linear-gradient(90deg, #2B5718, #D4A017, #3D7A22);
 }
 .detail__price-row {
   display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;
@@ -174,7 +174,7 @@
   border-radius: var(--radius-md); color: var(--text-primary); font-size: 0.85rem;
   cursor: pointer; transition: var(--transition);
 }
-.detail__date-field input:focus { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(233,30,140,0.1); }
+.detail__date-field input:focus { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(212,160,23,0.14); }
 .detail__booking-summary {
   display: flex;
   gap: 10px;
@@ -187,7 +187,7 @@
   gap: 8px;
   padding: 10px 12px;
   border-radius: var(--radius-full);
-  background: rgba(196,96,60,0.08);
+  background: rgba(43,87,24,0.08);
   color: var(--text-secondary);
   font-size: 0.8rem;
   font-weight: 700;
@@ -213,9 +213,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(196,96,60,0.18);
+  border: 1px solid rgba(43,87,24,0.2);
   background: white;
-  color: var(--earth-terracotta);
+  color: var(--secondary);
   cursor: pointer;
 }
 .detail__guest-count {
@@ -245,7 +245,7 @@
   align-items: center; justify-content: center; gap: 8px;
   margin-bottom: 16px; letter-spacing: 0.03em;
 }
-.detail__pay-btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 40px rgba(233,30,140,0.45); }
+.detail__pay-btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 40px rgba(212,160,23,0.50); }
 
 /* Price breakdown */
 .detail__price-breakdown { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
@@ -260,14 +260,14 @@
   color: var(--text-secondary); cursor: pointer; transition: var(--transition); margin-top: 10px;
   display: flex; align-items: center; justify-content: center; gap: 8px;
 }
-.detail__schedule-btn:hover { border-color: var(--earth-terracotta); color: var(--earth-terracotta); }
+.detail__schedule-btn:hover { border-color: var(--secondary); color: var(--secondary); }
 
 .detail__booking-note { font-size: 0.75rem; color: var(--text-muted); text-align: center; line-height: 1.6; }
 
 /* Trust box */
 .detail__trust {
-  margin-top: 16px; background: rgba(196,96,60,0.04);
-  border: 1px solid rgba(196,96,60,0.12); border-radius: var(--radius-lg); padding: 16px;
+  margin-top: 16px; background: rgba(43,87,24,0.04);
+  border: 1px solid rgba(43,87,24,0.12); border-radius: var(--radius-lg); padding: 16px;
   display: flex; flex-direction: column; gap: 10px;
 }
 .detail__trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-secondary); }

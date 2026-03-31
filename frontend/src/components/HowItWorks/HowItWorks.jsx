@@ -1,6 +1,7 @@
 import { FiSearch, FiCheckCircle, FiHome, FiArrowRight } from 'react-icons/fi';
 import { MdStar, MdVerified } from 'react-icons/md';
 import './HowItWorks.css';
+import { MdStarHalf } from "react-icons/md";
 
 const steps = [
   {
@@ -80,6 +81,11 @@ export default function HowItWorks() {
         <div className="hiw__trust">
           <div className="hiw__trust-content">
             <MdStar size={20} style={{ color: 'var(--gold)' }} />
+            <MdStar size={20} style={{ color: 'var(--gold)' }} />
+            <MdStar size={20} style={{ color: 'var(--gold)' }} />
+            <MdStar size={20} style={{ color: 'var(--gold)' }} />
+            <MdStarHalf size={20} color="#D4A017" />
+
             <p><strong>Rated 4.9/5</strong> by over 50,000 travellers across India</p>
           </div>
           <div className="hiw__trust-logos">

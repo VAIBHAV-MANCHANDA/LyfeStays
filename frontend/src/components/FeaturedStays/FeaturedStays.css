@@ -26,9 +26,9 @@
   letter-spacing: 0.02em;
 }
 .featured__filter:hover {
-  border-color: rgba(196,96,60,0.3);
-  color: var(--earth-terracotta);
-  background: rgba(196,96,60,0.05);
+  border-color: rgba(43,87,24,0.3);
+  color: var(--secondary);
+  background: rgba(43,87,24,0.05);
   transform: translateY(-1px);
 }
 .featured__filter--active {

@@ -1,82 +1,90 @@
 /* ===========================
    LyfeStays Global Index CSS
-   Oasis — Warm Luxury Theme
+   Logo — Forest Green & Golden Yellow Theme
    =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
 
 :root {
-  /* === Logo Accent Colors (sparingly, as vibrant highlights) === */
-  --primary:         #E91E8C;
-  --primary-light:   #FF5CB8;
-  --primary-dark:    #B5006C;
-  --secondary:       #00BCD4;
-  --secondary-light: #26D4E8;
-  --secondary-dark:  #0097A7;
+  
 
-  /* === Oasis Warm Core Backgrounds === */
-  --bg-dark:       #F7F2EA;   /* warm ivory — main page bg */
-  --bg-surface:    #FDF9F3;   /* slightly lighter ivory */
-  --bg-card:       #FFFDF8;   /* cream white card bg */
-  --bg-card-hover: #FFF6E8;   /* warm amber hover */
-  --bg-overlay:    rgba(247,242,234,0.95);
-  --bg-deep:       #1E120A;   /* deep espresso — hero dark sections */
-  --bg-sand:       #E4D9C4;   /* sandy tan */
-  --bg-oasis:      #163020;   /* deep oasis forest green */
-  --bg-stone:      #EDE5D5;   /* warm stone */
+  /* === Logo Primary: Golden Yellow === */
+  --primary:         #D4A017;   /* warm gold */
+  --primary-light:   #F5C518;   /* bright gold */
+  --primary-dark:    #A87A0A;   /* deep gold */
 
-  /* === Earthy Accent Palette === */
-  --earth-terracotta: #C4603C;
-  --earth-amber:      #CC8A1A;
-  --earth-sage:       #4D6B50;
-  --earth-clay:       #935228;
-  --earth-sand:       #C2A06A;
-  --earth-cream:      #EEE0C8;
-  --earth-linen:      #E8D8BC;
-  --earth-dune:       #B09A7E;
-  --earth-moss:       #6B7A42;
+  /* === Logo Secondary: Forest Green === */
+  --secondary:       #2B5718;   /* forest green */
+  --secondary-light: #3D7A22;   /* medium green */
+  --secondary-dark:  #1A3A0D;   /* deep forest */
+
+  /* === Page Backgrounds (kept warm-cream for readability) === */
+  --bg-dark:       #F7F5EF;   /* warm white — main page bg */
+  --bg-surface:    #FDFCF8;   /* slightly lighter warm white */
+  --bg-card:       #FFFFFF;   /* pure white card bg */
+  --bg-card-hover: #FAFDF5;   /* light green-white hover */
+  --bg-overlay:    rgba(247,245,239,0.95);
+  --bg-deep:       #1A3A0D;   /* deep forest green — dark sections */
+  --bg-sand:       #E8EDE2;   /* light sage */
+  --bg-oasis:      #1E4010;   /* deep logo forest green */
+  --bg-stone:      #EDF0E8;   /* warm sage stone */
+
+  /* === Green & Gold Accent Palette === */
+  --earth-terracotta: #3D7A22;   /* medium green (was terracotta) */
+  --earth-amber:      #D4A017;   /* warm gold (was amber) */
+  --earth-sage:       #4D6B50;   /* sage */
+  --earth-clay:       #2B5718;   /* forest green (was clay) */
+  --earth-sand:       #C8B86A;   /* warm gold-sand */
+  --earth-cream:      #EEF0E5;   /* light sage cream */
+  --earth-linen:      #E5EAD8;   /* sage linen */
+  --earth-dune:       #8FA882;   /* muted sage */
+  --earth-moss:       #4D6B50;   /* moss green */
 
   /* === Text === */
-  --text-primary:   #1C0E00;   /* deep warm espresso */
-  --text-secondary: #5A4228;   /* warm chestnut */
-  --text-muted:     #9C8768;   /* muted sand brown */
-  --text-inverse:   #F8F4EE;   /* cream text on dark */
-  --text-accent:    #C4603C;   /* terracotta accent */
+  --text-primary:   #162C0A;   /* deep forest text */
+  --text-secondary: #3D5C2A;   /* medium forest */
+  --text-muted:     #7A9470;   /* muted sage green */
+  --text-inverse:   #F5F8F0;   /* light text on dark */
+  --text-accent:    #D4A017;   /* gold accent */
 
   /* === Borders === */
-  --border:        rgba(150,110,70,0.14);
-  --border-warm:   rgba(196,96,60,0.2);
-  --border-dark:   rgba(30,18,10,0.08);
-  --border-accent: rgba(233,30,140,0.28);
+  --border:        rgba(43,87,24,0.14);
+  --border-warm:   rgba(212,160,23,0.25);
+  --border-dark:   rgba(26,58,13,0.1);
+  --border-accent: rgba(212,160,23,0.35);
 
   /* === Gradients === */
-  --grad-primary:    linear-gradient(135deg, #E91E8C 0%, #B5006C 100%);
-  --grad-secondary:  linear-gradient(135deg, #00BCD4 0%, #0097A7 100%);
-  --grad-oasis:      linear-gradient(135deg, #163020 0%, #0E2017 100%);
-  --grad-warm:       linear-gradient(135deg, #F7F2EA 0%, #EEE0C8 100%);
-  --grad-terracotta: linear-gradient(135deg, #C4603C 0%, #935228 100%);
-  --grad-amber:      linear-gradient(135deg, #CC8A1A 0%, #A56A10 100%);
-  --grad-sand:       linear-gradient(135deg, #E4D9C4 0%, #D0C0A0 100%);
-  --grad-hero:       linear-gradient(150deg, #163020 0%, #1E3820 40%, #0E2017 100%);
-  --grad-card:       linear-gradient(145deg, #FFFDF8 0%, #FFF5E4 100%);
-  --grad-glow-pink:  radial-gradient(circle, rgba(233,30,140,0.08) 0%, transparent 70%);
-  --grad-glow-teal:  radial-gradient(circle, rgba(0,188,212,0.07) 0%, transparent 70%);
-  --grad-glow-warm:  radial-gradient(circle, rgba(196,96,60,0.1) 0%, transparent 70%);
+  --grad-primary:    linear-gradient(135deg, #D4A017 0%, #A87A0A 100%);
+  --grad-secondary:  linear-gradient(135deg, #3D7A22 0%, #2B5718 100%);
+  --grad-oasis:      linear-gradient(135deg, #1E4010 0%, #162C0A 100%);
+  --grad-warm:       linear-gradient(135deg, #F7F5EF 0%, #EEF0E5 100%);
+  --grad-terracotta: linear-gradient(135deg, #3D7A22 0%, #2B5718 100%);
+  --grad-amber:      linear-gradient(135deg, #D4A017 0%, #A87A0A 100%);
+  --grad-sand:       linear-gradient(135deg, #E8EDE2 0%, #D5DCC8 100%);
+  --grad-hero:       linear-gradient(150deg, #1E4010 0%, #2B5718 40%, #162C0A 100%);
+  --grad-card:       linear-gradient(145deg, #FFFFFF 0%, #F5F8F0 100%);
+  --grad-glow-gold:  radial-gradient(circle, rgba(212,160,23,0.10) 0%, transparent 70%);
+  --grad-glow-green: radial-gradient(circle, rgba(43,87,24,0.09) 0%, transparent 70%);
+  --grad-glow-warm:  radial-gradient(circle, rgba(212,160,23,0.12) 0%, transparent 70%);
+
+  /* === Aliases kept for backward compat === */
+  --grad-glow-pink:  var(--grad-glow-gold);
+  --grad-glow-teal:  var(--grad-glow-green);
 
   /* === Special Accents === */
-  --gold:    #C2A06A;   /* warm sand gold */
-  --success: #3D6E2A;   /* forest green */
+  --gold:    #D4A017;   /* logo gold */
+  --success: #2B5718;   /* forest green */
   --danger:  #B83A28;   /* warm red */
 
-  /* === Warm Earthy Shadows === */
-  --shadow-sm:   0 1px 4px rgba(100,60,20,0.07);
-  --shadow-md:   0 4px 20px rgba(100,60,20,0.1);
-  --shadow-lg:   0 8px 40px rgba(100,60,20,0.14);
-  --shadow-xl:   0 20px 80px rgba(100,60,20,0.16);
-  --shadow-pink: 0 8px 32px rgba(233,30,140,0.28);
-  --shadow-teal: 0 8px 32px rgba(0,188,212,0.18);
-  --shadow-card: 0 2px 16px rgba(100,60,20,0.08), 0 1px 4px rgba(100,60,20,0.05);
-  --shadow-warm: 0 8px 40px rgba(196,96,60,0.22);
-  --shadow-lift: 0 12px 48px rgba(100,60,20,0.15), 0 4px 12px rgba(100,60,20,0.08);
+  /* === Shadows (green-tinted) === */
+  --shadow-sm:   0 1px 4px rgba(26,58,13,0.08);
+  --shadow-md:   0 4px 20px rgba(26,58,13,0.12);
+  --shadow-lg:   0 8px 40px rgba(26,58,13,0.15);
+  --shadow-xl:   0 20px 80px rgba(26,58,13,0.18);
+  --shadow-pink: 0 8px 32px rgba(212,160,23,0.32);   /* gold shadow (alias) */
+  --shadow-teal: 0 8px 32px rgba(43,87,24,0.22);    /* green shadow (alias) */
+  --shadow-card: 0 2px 16px rgba(26,58,13,0.09), 0 1px 4px rgba(26,58,13,0.05);
+  --shadow-warm: 0 8px 40px rgba(212,160,23,0.28);
+  --shadow-lift: 0 12px 48px rgba(26,58,13,0.16), 0 4px 12px rgba(26,58,13,0.09);
 
   /* === Spacing === */
   --container-max: 1280px;
@@ -162,9 +170,9 @@ input, textarea, select { font-family: var(--font-body); outline: none; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(196,96,60,0.1);
-  border: 1px solid rgba(196,96,60,0.22);
-  color: var(--earth-terracotta);
+  background: rgba(43,87,24,0.1);
+  border: 1px solid rgba(43,87,24,0.22);
+  color: var(--secondary-light);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -241,7 +249,7 @@ input, textarea, select { font-family: var(--font-body); outline: none; }
 }
 .btn-primary:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 14px 44px rgba(233,30,140,0.4);
+  box-shadow: 0 14px 44px rgba(212,160,23,0.45);
 }
 
 .btn-secondary {
@@ -260,9 +268,9 @@ input, textarea, select { font-family: var(--font-body); outline: none; }
   letter-spacing: 0.03em;
 }
 .btn-secondary:hover {
-  border-color: var(--earth-terracotta);
-  color: var(--earth-terracotta);
-  background: rgba(196,96,60,0.06);
+  border-color: var(--secondary);
+  color: var(--secondary);
+  background: rgba(43,87,24,0.06);
 }
 
 .btn-warm {
@@ -283,7 +291,7 @@ input, textarea, select { font-family: var(--font-body); outline: none; }
 }
 .btn-warm:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 14px 44px rgba(196,96,60,0.38);
+  box-shadow: 0 14px 44px rgba(212,160,23,0.42);
 }
 
 .btn-oasis {
@@ -324,7 +332,7 @@ input, textarea, select { font-family: var(--font-body); outline: none; }
 }
 .btn-teal:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 14px 44px rgba(0,188,212,0.38);
+  box-shadow: 0 14px 44px rgba(43,87,24,0.42);
 }
 
 /* ===================== */
@@ -343,24 +351,24 @@ input, textarea, select { font-family: var(--font-body); outline: none; }
 }
 
 .badge-pink {
-  background: rgba(233,30,140,0.1);
-  border: 1px solid rgba(233,30,140,0.25);
+  background: rgba(212,160,23,0.12);
+  border: 1px solid rgba(212,160,23,0.28);
   color: var(--primary-dark);
 }
 .badge-teal {
-  background: rgba(0,188,212,0.1);
-  border: 1px solid rgba(0,188,212,0.25);
+  background: rgba(43,87,24,0.1);
+  border: 1px solid rgba(43,87,24,0.25);
   color: var(--secondary-dark);
 }
 .badge-gold {
-  background: rgba(194,160,106,0.15);
-  border: 1px solid rgba(194,160,106,0.3);
-  color: var(--earth-clay);
+  background: rgba(212,160,23,0.14);
+  border: 1px solid rgba(212,160,23,0.3);
+  color: var(--primary-dark);
 }
 .badge-warm {
-  background: rgba(196,96,60,0.1);
-  border: 1px solid rgba(196,96,60,0.22);
-  color: var(--earth-terracotta);
+  background: rgba(61,122,34,0.1);
+  border: 1px solid rgba(61,122,34,0.22);
+  color: var(--secondary-light);
 }
 .badge-sage {
   background: rgba(77,107,80,0.1);
@@ -374,12 +382,12 @@ input, textarea, select { font-family: var(--font-body); outline: none; }
 /* Divider */
 .divider { height: 1px; background: var(--border); }
 
-/* Glass card — warm */
+/* Glass card — green/gold */
 .glass-card {
-  background: rgba(255,253,248,0.75);
+  background: rgba(255,255,255,0.78);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(150,110,70,0.12);
+  border: 1px solid rgba(43,87,24,0.12);
   border-radius: var(--radius-lg);
 }
 
@@ -418,3 +426,4 @@ input, textarea, select { font-family: var(--font-body); outline: none; }
   .section { padding: var(--section-pad-sm) 0; }
   .section-title { font-size: 2rem; }
 }
+

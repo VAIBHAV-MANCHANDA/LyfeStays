@@ -3,14 +3,14 @@
   position: relative;
   padding: 140px 0 60px;
   overflow: hidden;
-  background: linear-gradient(145deg, #FFF5E8 0%, #FDEBD4 50%, #FAE0C4 100%);
+  background: linear-gradient(145deg, #EFF6E8 0%, #E0EDCF 50%, #D5E8C0 100%);
 }
 .rent__hero-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 15% 60%, rgba(233,30,140,0.1) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 30%, rgba(0,188,212,0.1) 0%, transparent 55%),
-    radial-gradient(ellipse at 60% 90%, rgba(196,96,60,0.08) 0%, transparent 50%);
+    radial-gradient(ellipse at 15% 60%, rgba(212,160,23,0.11) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, rgba(43,87,24,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 90%, rgba(61,122,34,0.07) 0%, transparent 50%);
 }
 .rent__hero-content {
   position: relative; z-index: 2;
@@ -45,8 +45,8 @@
   box-shadow: var(--shadow-sm);
 }
 .rent__search-input:focus {
-  border-color: var(--earth-terracotta);
-  box-shadow: 0 0 0 3px rgba(196,96,60,0.1);
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(43,87,24,0.10);
 }
 .rent__search-input::placeholder { color: var(--text-muted); }
 .rent__filter-toggle {
@@ -64,9 +64,9 @@
   box-shadow: var(--shadow-sm);
 }
 .rent__filter-toggle:hover, .rent__filter-toggle--active {
-  background: rgba(196,96,60,0.08);
-  border-color: rgba(196,96,60,0.3);
-  color: var(--earth-terracotta);
+  background: rgba(43,87,24,0.08);
+  border-color: rgba(43,87,24,0.3);
+  color: var(--secondary);
 }
 
 /* Filter Panel */
@@ -99,13 +99,13 @@
   cursor: pointer;
   transition: var(--transition);
 }
-.rent__chip:hover { border-color: rgba(196,96,60,0.3); color: var(--earth-terracotta); }
+.rent__chip:hover { border-color: rgba(43,87,24,0.3); color: var(--secondary); }
 .rent__chip--active {
-  background: var(--grad-terracotta);
+  background: var(--grad-secondary);
   border-color: transparent;
   color: white;
 }
-.rent__slider { width: 100%; accent-color: var(--earth-terracotta); cursor: pointer; }
+.rent__slider { width: 100%; accent-color: var(--secondary); cursor: pointer; }
 .rent__slider-labels {
   display: flex; justify-content: space-between;
   font-size: 0.75rem; color: var(--text-muted);
@@ -160,7 +160,7 @@
   transition: var(--transition-spring);
 }
 .rent__why-card:hover {
-  border-color: rgba(196,96,60,0.2);
+  border-color: rgba(43,87,24,0.22);
   transform: translateY(-4px);
   box-shadow: var(--shadow-lift);
 }

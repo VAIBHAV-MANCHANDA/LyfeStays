@@ -20,14 +20,14 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #E91E8C, #C4603C, #CC8A1A, #00BCD4);
+  background: linear-gradient(90deg, #2B5718, #D4A017, #F5C518, #3D7A22);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
 .newsletter__orb-1 {
   position: absolute;
   width: 400px; height: 400px;
-  background: rgba(233,30,140,0.08);
+  background: rgba(212,160,23,0.09);
   border-radius: 50%;
   filter: blur(80px);
   top: -100px; right: 200px;
@@ -36,7 +36,7 @@
 .newsletter__orb-2 {
   position: absolute;
   width: 300px; height: 300px;
-  background: rgba(0,188,212,0.07);
+  background: rgba(43,87,24,0.08);
   border-radius: 50%;
   filter: blur(60px);
   bottom: -80px; left: 100px;
@@ -109,7 +109,7 @@
 }
 .newsletter__input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(233,30,140,0.1);
+  box-shadow: 0 0 0 3px rgba(212,160,23,0.13);
 }
 .newsletter__input::placeholder { color: var(--text-muted); }
 .newsletter__btn { white-space: nowrap; }
@@ -167,8 +167,8 @@
 .newsletter__stat-discount {
   margin-left: auto;
   padding: 4px 10px;
-  background: rgba(233,30,140,0.1);
-  border: 1px solid rgba(233,30,140,0.2);
+  background: rgba(212,160,23,0.12);
+  border: 1px solid rgba(212,160,23,0.25);
   border-radius: var(--radius-full);
   font-size: 0.72rem;
   font-weight: 800;

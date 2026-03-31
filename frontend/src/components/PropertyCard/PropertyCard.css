@@ -14,7 +14,7 @@
 .property-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lift);
-  border-color: rgba(196,96,60,0.2);
+  border-color: rgba(43,87,24,0.22);
 }
 
 /* Image */
@@ -108,7 +108,7 @@
 .property-card__wishlist:hover {
   background: white;
   transform: scale(1.12);
-  box-shadow: 0 4px 16px rgba(233,30,140,0.25);
+  box-shadow: 0 4px 16px rgba(212,160,23,0.28);
 }
 .property-card__wishlist--active {
   color: var(--primary);
@@ -188,11 +188,11 @@
 }
 .property-card__amenity {
   padding: 4px 10px;
-  background: rgba(196,96,60,0.08);
-  border: 1px solid rgba(196,96,60,0.15);
+  background: rgba(43,87,24,0.08);
+  border: 1px solid rgba(43,87,24,0.15);
   border-radius: var(--radius-full);
   font-size: 0.72rem;
-  color: var(--earth-terracotta);
+  color: var(--secondary);
   font-weight: 600;
 }
 
@@ -232,9 +232,9 @@
   transition: var(--transition-spring);
   border: none;
   letter-spacing: 0.04em;
-  box-shadow: 0 4px 16px rgba(233,30,140,0.28);
+  box-shadow: 0 4px 16px rgba(212,160,23,0.30);
 }
 .property-card__book-btn:hover {
   transform: translateY(-1px) scale(1.04);
-  box-shadow: 0 8px 28px rgba(233,30,140,0.4);
+  box-shadow: 0 8px 28px rgba(212,160,23,0.45);
 }

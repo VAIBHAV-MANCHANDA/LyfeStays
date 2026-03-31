@@ -2,13 +2,13 @@
 .buy__hero {
   position: relative;
   padding: 140px 0 60px; overflow: hidden;
-  background: linear-gradient(145deg, #FFF8EE 0%, #FDEEE0 50%, #FAE5CC 100%);
+  background: linear-gradient(145deg, #EFF6E8 0%, #E4EFD8 50%, #D8E8C8 100%);
 }
 .buy__hero-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 80% 30%, rgba(204,138,26,0.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 70%, rgba(233,30,140,0.09) 0%, transparent 55%);
+    radial-gradient(ellipse at 80% 30%, rgba(212,160,23,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 70%, rgba(43,87,24,0.09) 0%, transparent 55%);
 }
 .buy__hero-inner {
   position: relative; z-index: 2;
@@ -51,7 +51,7 @@
   border-radius: var(--radius-lg); transition: var(--transition);
   box-shadow: var(--shadow-sm);
 }
-.buy__stat:hover { border-color: rgba(196,96,60,0.25); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.buy__stat:hover { border-color: rgba(43,87,24,0.25); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .buy__stat-icon { font-size: 1.6rem; }
 .buy__stat-value { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; }
 .buy__stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
@@ -68,7 +68,7 @@
   content: '';
   position: absolute; top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--earth-amber), var(--earth-terracotta));
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 .buy__emi-title {
@@ -80,11 +80,11 @@
 .buy__emi-field { display: flex; flex-direction: column; gap: 8px; }
 .buy__emi-field label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 700; }
 .buy__emi-value { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.03em; }
-.buy__emi-range { width: 100%; accent-color: var(--earth-amber); }
+.buy__emi-range { width: 100%; accent-color: var(--primary); }
 .buy__emi-result {
   display: flex; gap: 24px; padding: 24px;
-  background: linear-gradient(135deg, rgba(204,138,26,0.07) 0%, rgba(196,96,60,0.05) 100%);
-  border: 1.5px solid rgba(204,138,26,0.2);
+  background: linear-gradient(135deg, rgba(212,160,23,0.08) 0%, rgba(43,87,24,0.05) 100%);
+  border: 1.5px solid rgba(212,160,23,0.22);
   border-radius: var(--radius-lg); margin-bottom: 12px;
 }
 .buy__emi-result-item { display: flex; flex-direction: column; gap: 4px; }
@@ -101,7 +101,7 @@
   border-radius: var(--radius-lg); padding: 28px 22px;
   transition: var(--transition-spring);
 }
-.buy__benefit-card:hover { border-color: rgba(204,138,26,0.25); transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+.buy__benefit-card:hover { border-color: rgba(43,87,24,0.25); transform: translateY(-4px); box-shadow: var(--shadow-lift); }
 .buy__benefit-icon { font-size: 2rem; display: block; margin-bottom: 14px; }
 .buy__benefit-card h4 { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
 .buy__benefit-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
