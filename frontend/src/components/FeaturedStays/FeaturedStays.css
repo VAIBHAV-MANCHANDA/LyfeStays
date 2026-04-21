@@ -26,13 +26,13 @@
   letter-spacing: 0.02em;
 }
 .featured__filter:hover {
-  border-color: rgba(43,87,24,0.3);
-  color: var(--secondary);
-  background: rgba(43,87,24,0.05);
+  border-color: rgba(212,160,23,0.40);
+  color: var(--primary-dark);
+  background: rgba(212,160,23,0.08);
   transform: translateY(-1px);
 }
 .featured__filter--active {
-  background: var(--grad-terracotta);
+  background: var(--grad-primary);
   border-color: transparent;
   color: white;
   box-shadow: var(--shadow-warm);

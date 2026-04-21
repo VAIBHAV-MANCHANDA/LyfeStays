@@ -3,14 +3,14 @@
   position: relative;
   padding: 140px 0 60px;
   overflow: hidden;
-  background: linear-gradient(145deg, #EFF6E8 0%, #E0EDCF 50%, #D5E8C0 100%);
+  background: linear-gradient(145deg, #FFFBF0 0%, #FDF3D0 50%, #F5E8B8 100%);
 }
 .rent__hero-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 15% 60%, rgba(212,160,23,0.11) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 30%, rgba(43,87,24,0.10) 0%, transparent 55%),
-    radial-gradient(ellipse at 60% 90%, rgba(61,122,34,0.07) 0%, transparent 50%);
+    radial-gradient(ellipse at 15% 60%, rgba(212,160,23,0.16) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, rgba(26,58,107,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 90%, rgba(212,160,23,0.10) 0%, transparent 50%);
 }
 .rent__hero-content {
   position: relative; z-index: 2;
@@ -46,7 +46,7 @@
 }
 .rent__search-input:focus {
   border-color: var(--secondary);
-  box-shadow: 0 0 0 3px rgba(43,87,24,0.10);
+  box-shadow: 0 0 0 3px rgba(26,58,107,0.10);
 }
 .rent__search-input::placeholder { color: var(--text-muted); }
 .rent__filter-toggle {
@@ -64,8 +64,8 @@
   box-shadow: var(--shadow-sm);
 }
 .rent__filter-toggle:hover, .rent__filter-toggle--active {
-  background: rgba(43,87,24,0.08);
-  border-color: rgba(43,87,24,0.3);
+  background: rgba(26,58,107,0.08);
+  border-color: rgba(26,58,107,0.3);
   color: var(--secondary);
 }
 
@@ -99,9 +99,9 @@
   cursor: pointer;
   transition: var(--transition);
 }
-.rent__chip:hover { border-color: rgba(43,87,24,0.3); color: var(--secondary); }
+.rent__chip:hover { border-color: rgba(212,160,23,0.40); color: var(--primary-dark); }
 .rent__chip--active {
-  background: var(--grad-secondary);
+  background: var(--grad-primary);
   border-color: transparent;
   color: white;
 }
@@ -160,7 +160,7 @@
   transition: var(--transition-spring);
 }
 .rent__why-card:hover {
-  border-color: rgba(43,87,24,0.22);
+  border-color: rgba(26,58,107,0.22);
   transform: translateY(-4px);
   box-shadow: var(--shadow-lift);
 }

@@ -11,7 +11,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 10% 50%, rgba(43,87,24,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 50%, rgba(26,58,107,0.07) 0%, transparent 60%),
     radial-gradient(ellipse at 90% 30%, rgba(212,160,23,0.07) 0%, transparent 55%);
   pointer-events: none;
 }
@@ -31,7 +31,7 @@
   left: 16%;
   right: 16%;
   height: 2px;
-  background: linear-gradient(90deg, #2B5718, #D4A017, #F5C518);
+  background: linear-gradient(90deg, #1A3A6B, #D4A017, #F5C518);
   opacity: 0.28;
   z-index: 0;
 }
@@ -49,13 +49,13 @@
 .hiw__step:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lift);
-  border-color: rgba(43,87,24,0.2);
+  border-color: rgba(26,58,107,0.2);
 }
 
 .hiw__step-num {
   width: 56px; height: 56px;
   border-radius: 50%;
-  background: var(--grad-terracotta);
+  background: var(--grad-primary);
   color: white;
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -106,8 +106,8 @@
   transition: var(--transition);
 }
 .hiw__perk:hover {
-  border-color: rgba(43,87,24,0.25);
-  color: var(--secondary);
+  border-color: rgba(212,160,23,0.40);
+  color: var(--primary-dark);
   box-shadow: var(--shadow-md);
 }
 .hiw__perk-icon { font-size: 1.1rem; }
@@ -115,7 +115,7 @@
 /* Trust banner */
 .hiw__trust {
   
-  background: linear-gradient(135deg, #163020 0%, #0E2017 100%);
+  background: linear-gradient(135deg, #0F2347 0%, #091525 100%);
   border-radius: var(--radius-xl);
   padding: 40px 48px;
   display: flex;

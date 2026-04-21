@@ -14,7 +14,7 @@
 .property-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lift);
-  border-color: rgba(43,87,24,0.22);
+  border-color: rgba(212,160,23,0.35);
 }
 
 /* Image */
@@ -77,8 +77,8 @@
   box-shadow: 0 3px 10px rgba(0,188,212,0.35);
 }
 .property-card__tag--rent {
-  background: rgba(22,48,32,0.85);
-  color: #B6D4BE;
+  background: rgba(15,35,71,0.85);
+  color: #B6D4E8;
   backdrop-filter: blur(8px);
 }
 .property-card__tag--buy {
@@ -188,11 +188,11 @@
 }
 .property-card__amenity {
   padding: 4px 10px;
-  background: rgba(43,87,24,0.08);
-  border: 1px solid rgba(43,87,24,0.15);
+  background: rgba(212,160,23,0.08);
+  border: 1px solid rgba(212,160,23,0.22);
   border-radius: var(--radius-full);
   font-size: 0.72rem;
-  color: var(--secondary);
+  color: var(--primary-dark);
   font-weight: 600;
 }
 

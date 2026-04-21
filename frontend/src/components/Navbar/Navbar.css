@@ -1,5 +1,5 @@
 /* ============================
-   Navbar — Oasis Warm Theme
+   Navbar — Blue & Gold Theme
    (class names match Navbar.jsx)
    ============================ */
 .navbar {
@@ -10,20 +10,20 @@
   padding: 0 28px;
 }
 
-/* Transparent on hero (bright bg visible below) */
+/* Transparent on hero */
 .navbar:not(.navbar--scrolled) {
-  background: rgba(247,250,243,0.65);
+  background: rgba(245,247,252,0.65);
   backdrop-filter: blur(4px);
-  border-bottom: 1px solid rgba(43,87,24,0.08);
+  border-bottom: 1px solid rgba(26,58,107,0.08);
 }
 
-/* Scrolled — clean glassmorphism */
+/* Scrolled — clean glassmorphism with gold bottom border */
 .navbar--scrolled {
-  background: rgba(252,255,249,0.97);
+  background: rgba(250,252,255,0.97);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(43,87,24,0.12);
-  box-shadow: 0 4px 24px rgba(26,58,13,0.09);
+  border-bottom: 2px solid rgba(212,160,23,0.30);
+  box-shadow: 0 4px 24px rgba(15,35,71,0.09), 0 1px 0 rgba(212,160,23,0.15);
 }
 
 .navbar__inner {
@@ -42,7 +42,8 @@
   flex-shrink: 0;
 }
 .navbar__logo img {
-  height: 204px; width: auto;
+  height: 120px; 
+  width: auto;
   object-fit: contain;
 }
 
@@ -72,10 +73,11 @@
   text-decoration: none;
 }
 .navbar__link-icon { display: flex; align-items: center; opacity: 0.7; }
-.navbar__link:hover { background: rgba(43,87,24,0.08); color: var(--secondary); }
+.navbar__link:hover { background: rgba(212,160,23,0.10); color: var(--primary-dark); }
 .navbar__link--active, .navbar__link.active {
-  background: rgba(43,87,24,0.12);
-  color: var(--secondary);
+  background: rgba(212,160,23,0.14);
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--primary);
 }
 
 /* Right Side */
@@ -149,8 +151,8 @@
 
 .navbar__dropdown-header {
   padding: 14px 16px 12px;
-  border-bottom: 1px solid var(--border);
-  background: rgba(43,87,24,0.04);
+  border-bottom: 1px solid rgba(212,160,23,0.2);
+  background: rgba(212,160,23,0.06);
 }
 .navbar__dropdown-title { font-weight: 700; font-size: 0.875rem; color: var(--text-primary); }
 .navbar__dropdown-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
@@ -175,8 +177,8 @@
   text-align: left;
 }
 .navbar__dropdown-item:hover {
-  background: rgba(43,87,24,0.05);
-  color: var(--secondary);
+  background: rgba(212,160,23,0.08);
+  color: var(--primary-dark);
 }
 .navbar__dropdown-divider { height: 1px; background: var(--border); }
 
@@ -231,8 +233,8 @@
   transition: var(--transition);
 }
 .navbar__mobile-link:hover, .navbar__mobile-link--active {
-  background: rgba(43,87,24,0.07);
-  color: var(--secondary);
+  background: rgba(212,160,23,0.10);
+  color: var(--primary-dark);
 }
 
 .navbar__mobile-actions {

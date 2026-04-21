@@ -36,17 +36,17 @@
 }
 
 .destinations__filter:hover {
-  border-color: rgba(43, 87, 24, 0.35);
-  color: var(--secondary);
+  border-color: rgba(212,160,23,0.45);
+  color: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(26,58,13,0.12);
+  box-shadow: 0 6px 16px rgba(212,160,23,0.18);
 }
 
 .destinations__filter--active {
-  background: linear-gradient(135deg, #2B5718, #D4A017);
+  background: linear-gradient(135deg, #D4A017, #A87A0A);
   border-color: transparent;
   color: white;
-  box-shadow: 0 6px 18px rgba(43,87,24,0.35);
+  box-shadow: 0 6px 18px rgba(212,160,23,0.45);
   transform: translateY(-2px);
 }
 
@@ -117,13 +117,13 @@
   border-radius: inherit;
 }
 
-/* Gold-green border ring on hover */
+/* Gold-blue border ring on hover */
 .dest-card:hover .dest-card__oval::after {
   content: '';
   position: absolute;
   inset: -3px;
   border-radius: 104px;
-  background: linear-gradient(135deg, #D4A017, #2B5718, #F5C518);
+  background: linear-gradient(135deg, #D4A017, #1A3A6B, #F5C518);
   z-index: -1;
 }
 

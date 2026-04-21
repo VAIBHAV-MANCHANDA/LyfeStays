@@ -2,7 +2,9 @@
    Footer — Compact & Symmetric
    ============================ */
 .footer {
-  background: linear-gradient(160deg, #1A3A0D 0%, #162C0A 100%);
+  /* background: linear-gradient(160deg, #0F2347 0%, #0A1830 100%); */
+    background: black;
+
   color: rgba(255,255,255,0.8);
   position: relative;
 }
@@ -13,7 +15,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #2B5718, #D4A017, #F5C518, #3D7A22);
+  background: linear-gradient(90deg, #1A3A6B, #D4A017, #F5C518, #2A5298);
 }
 
 /* ========================
@@ -154,7 +156,7 @@
 
 .footer__nl-btn {
   padding: 9px 16px;
-  background: linear-gradient(135deg, #D4A017, #2B5718);
+  background: linear-gradient(135deg, #D4A017, #1A3A6B);
   color: white;
   border: none;
   border-radius: 30px;

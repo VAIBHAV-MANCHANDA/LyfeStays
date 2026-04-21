@@ -5,10 +5,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
-/* Left Panel — warm sage-green */
+/* Left Panel — warm gold tint */
 .auth__left {
   position: relative;
-  background: linear-gradient(145deg, #EFF6E8 0%, #E0EDCF 40%, #D5E8C0 100%);
+  background: linear-gradient(145deg, #FFFBF0 0%, #FDF3D0 40%, #F5E8B8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,9 +18,9 @@
 .auth__left-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 30% 60%, rgba(212,160,23,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 30%, rgba(43,87,24,0.10) 0%, transparent 55%),
-    radial-gradient(ellipse at 60% 80%, rgba(61,122,34,0.07) 0%, transparent 50%);
+    radial-gradient(ellipse at 30% 60%, rgba(212,160,23,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(26,58,107,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 80%, rgba(212,160,23,0.10) 0%, transparent 50%);
 }
 .auth__left-content {
   position: relative; z-index: 1;
@@ -82,8 +82,8 @@
   box-shadow: var(--shadow-sm);
 }
 .auth__social-btn:hover {
-  border-color: rgba(43,87,24,0.3);
-  background: rgba(43,87,24,0.04);
+  border-color: rgba(26,58,107,0.3);
+  background: rgba(26,58,107,0.04);
 }
 
 .auth__divider {
@@ -123,7 +123,7 @@
 }
 .auth__input-wrap input:focus {
   border-color: var(--secondary);
-  box-shadow: 0 0 0 3px rgba(43,87,24,0.10);
+  box-shadow: 0 0 0 3px rgba(26,58,107,0.10);
 }
 .auth__input-wrap input::placeholder { color: var(--text-muted); }
 .auth__eye {
@@ -168,12 +168,12 @@
   cursor: pointer; transition: var(--transition);
   box-shadow: var(--shadow-sm);
 }
-.auth__role-btn:hover { border-color: rgba(43,87,24,0.3); color: var(--text-primary); }
+.auth__role-btn:hover { border-color: rgba(212,160,23,0.40); color: var(--primary-dark); }
 .auth__role-btn--active {
-  border-color: var(--secondary);
-  background: rgba(43,87,24,0.07);
-  color: var(--secondary);
-  box-shadow: 0 0 0 1px rgba(43,87,24,0.15);
+  border-color: var(--primary);
+  background: rgba(212,160,23,0.10);
+  color: var(--primary-dark);
+  box-shadow: 0 0 0 1px rgba(212,160,23,0.25);
 }
 .auth__role-icon { font-size: 1.5rem; }
 .auth__role-label { font-size: 0.82rem; font-weight: 700; }

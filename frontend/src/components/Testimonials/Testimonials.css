@@ -10,7 +10,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(43,87,24,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 50%, rgba(26,58,107,0.06) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 30%, rgba(212,160,23,0.06) 0%, transparent 55%);
 }
 
@@ -31,7 +31,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #2B5718, #D4A017, #F5C518);
+  background: linear-gradient(90deg, #1A3A6B, #D4A017, #F5C518);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
@@ -66,7 +66,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--secondary);
-  box-shadow: 0 0 0 4px rgba(43,87,24,0.12);
+  box-shadow: 0 0 0 4px rgba(26,58,107,0.12);
 }
 .testi__name { font-weight: 700; color: var(--text-primary); font-size: 1rem; }
 .testi__location { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
@@ -130,11 +130,11 @@
   transition: var(--transition);
 }
 .testi__card--active {
-  border-color: var(--secondary);
-  background: rgba(43,87,24,0.04);
-  box-shadow: 0 0 0 1px rgba(43,87,24,0.15), var(--shadow-md);
+  border-color: var(--primary);
+  background: rgba(212,160,23,0.05);
+  box-shadow: 0 0 0 1px rgba(212,160,23,0.25), var(--shadow-md);
 }
-.testi__card:hover { transform: translateY(-3px); border-color: rgba(43,87,24,0.3); box-shadow: var(--shadow-md); }
+.testi__card:hover { transform: translateY(-3px); border-color: rgba(212,160,23,0.35); box-shadow: var(--shadow-md); }
 .testi__card-stars { display: flex; gap: 2px; margin-bottom: 10px; }
 .testi__card-text {
   font-size: 0.8rem;
