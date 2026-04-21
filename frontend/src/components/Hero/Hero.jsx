@@ -10,7 +10,7 @@ import {
   FiMinus,
   FiPlus,
 } from 'react-icons/fi';
-import { MdOutlineTravelExplore } from 'react-icons/md';
+import { MdOutlineTravelExplore, MdOutlineBed, MdOutlineChildCare } from 'react-icons/md';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import './Hero.css';
@@ -28,6 +28,8 @@ export default function Hero() {
   const [activeTab, setActiveTab] = useState('rent');
   const [destination, setDestination] = useState('');
   const [guests, setGuests] = useState(2);
+  const [rooms, setRooms] = useState(1);
+  const [children, setChildren] = useState(0);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [focusedRange, setFocusedRange] = useState([0, 0]);
   const [selectionRange, setSelectionRange] = useState({
@@ -60,6 +62,8 @@ export default function Hero() {
       params.set('checkout', format(selectionRange.endDate, 'yyyy-MM-dd'));
     }
     params.set('guests', String(guests));
+    params.set('rooms', String(rooms));
+    params.set('children', String(children));
 
     navigate(`/${activeTab}?${params.toString()}`);
   };
@@ -205,6 +209,62 @@ export default function Hero() {
                     className="hero__counter-btn"
                     onClick={() => setGuests((current) => Math.min(12, current + 1))}
                     aria-label="Increase guests"
+                  >
+                    <FiPlus />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero__divider-v" />
+
+            <div className="hero__field">
+              <MdOutlineBed className="hero__field-icon" />
+              <div className="hero__field-body">
+                <span className="hero__field-label">Rooms</span>
+                <div className="hero__counter">
+                  <button
+                    type="button"
+                    className="hero__counter-btn"
+                    onClick={() => setRooms((current) => Math.max(1, current - 1))}
+                    aria-label="Decrease rooms"
+                  >
+                    <FiMinus />
+                  </button>
+                  <span className="hero__counter-value">{rooms}</span>
+                  <button
+                    type="button"
+                    className="hero__counter-btn"
+                    onClick={() => setRooms((current) => Math.min(10, current + 1))}
+                    aria-label="Increase rooms"
+                  >
+                    <FiPlus />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero__divider-v" />
+
+            <div className="hero__field">
+              <MdOutlineChildCare className="hero__field-icon" />
+              <div className="hero__field-body">
+                <span className="hero__field-label">Children <span className="hero__field-sublabel">(12–18 yrs)</span></span>
+                <div className="hero__counter">
+                  <button
+                    type="button"
+                    className="hero__counter-btn"
+                    onClick={() => setChildren((current) => Math.max(0, current - 1))}
+                    aria-label="Decrease children"
+                  >
+                    <FiMinus />
+                  </button>
+                  <span className="hero__counter-value">{children}</span>
+                  <button
+                    type="button"
+                    className="hero__counter-btn"
+                    onClick={() => setChildren((current) => Math.min(8, current + 1))}
+                    aria-label="Increase children"
                   >
                     <FiPlus />
                   </button>

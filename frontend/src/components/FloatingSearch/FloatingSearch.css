@@ -4,7 +4,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(-20px);
   z-index: 999;
-  width: min(980px, 94vw);
+  width: min(1160px, 94vw);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -53,11 +53,19 @@
 }
 
 .floating-search__field--date {
-  flex: 0 0 150px;
+  flex: 0 0 130px;
 }
 
 .floating-search__field--guests {
-  flex: 0 0 180px;
+  flex: 0 0 160px;
+}
+
+.floating-search__field--rooms {
+  flex: 0 0 130px;
+}
+
+.floating-search__field--children {
+  flex: 0 0 160px;
 }
 
 .floating-search__field-button {
@@ -93,6 +101,14 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1;
+}
+
+.floating-search__field-sublabel {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #888;
 }
 
 .floating-search__input {
@@ -304,6 +320,12 @@
   letter-spacing: 0.01em;
 }
 
+@media (max-width: 768px) {
+  .floating-search {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   .floating-search {
     top: 60px;
@@ -319,7 +341,9 @@
 
   .floating-search__field,
   .floating-search__field--date,
-  .floating-search__field--guests {
+  .floating-search__field--guests,
+  .floating-search__field--rooms,
+  .floating-search__field--children {
     flex: 1 1 calc(50% - 8px);
     min-width: 140px;
     padding: 10px 12px;

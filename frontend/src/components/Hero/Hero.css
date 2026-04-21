@@ -8,7 +8,7 @@
   overflow: visible;
   z-index: 10;
   padding-top: 80px;
-  padding-bottom: 60px;
+  padding-bottom: 100px; /* increased to accommodate scroll indicator */
   background: linear-gradient(145deg, #FFFDF5 0%, #FDF6E3 35%, #F7EDD0 65%, #F0E0B0 100%);
 }
 
@@ -119,7 +119,7 @@
     0 4px 16px rgba(15, 35, 71, 0.07);
   padding: 20px 24px 20px;
   width: 100%;
-  max-width: 840px;
+  max-width: 1060px;
   margin-bottom: 36px;
 }
 
@@ -214,6 +214,14 @@
   letter-spacing: 0.1em;
   color: #555;
   line-height: 1;
+}
+
+.hero__field-sublabel {
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #888;
 }
 
 .hero__input {
@@ -436,6 +444,7 @@
   gap: 48px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 80px; /* clear the absolute-positioned scroll indicator */
 }
 
 .hero__stat {

@@ -11,6 +11,7 @@ import {
   FiMinus,
   FiPlus,
 } from 'react-icons/fi';
+import { MdOutlineBed, MdOutlineChildCare } from 'react-icons/md';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import './FloatingSearch.css';
@@ -21,6 +22,8 @@ export default function FloatingSearch() {
   const [visible, setVisible] = useState(false);
   const [destination, setDestination] = useState('');
   const [guests, setGuests] = useState(2);
+  const [rooms, setRooms] = useState(1);
+  const [children, setChildren] = useState(0);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [focusedRange, setFocusedRange] = useState([0, 0]);
   const [selectionRange, setSelectionRange] = useState({
@@ -59,6 +62,8 @@ export default function FloatingSearch() {
       params.set('checkout', format(selectionRange.endDate, 'yyyy-MM-dd'));
     }
     params.set('guests', String(guests));
+    params.set('rooms', String(rooms));
+    params.set('children', String(children));
 
     navigate(`/rent?${params.toString()}`);
   };
@@ -167,6 +172,64 @@ export default function FloatingSearch() {
                   className="floating-search__counter-btn"
                   onClick={() => setGuests((current) => Math.min(12, current + 1))}
                   aria-label="Increase guests"
+                >
+                  <FiPlus />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="floating-search__divider" />
+
+          <div className="floating-search__field floating-search__field--rooms">
+            <MdOutlineBed className="floating-search__field-icon" />
+            <div className="floating-search__field-body">
+              <span className="floating-search__field-label">Rooms</span>
+              <div className="floating-search__counter">
+                <button
+                  type="button"
+                  className="floating-search__counter-btn"
+                  onClick={() => setRooms((current) => Math.max(1, current - 1))}
+                  aria-label="Decrease rooms"
+                >
+                  <FiMinus />
+                </button>
+                <span className="floating-search__counter-value">{rooms}</span>
+                <button
+                  type="button"
+                  className="floating-search__counter-btn"
+                  onClick={() => setRooms((current) => Math.min(10, current + 1))}
+                  aria-label="Increase rooms"
+                >
+                  <FiPlus />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="floating-search__divider" />
+
+          <div className="floating-search__field floating-search__field--children">
+            <MdOutlineChildCare className="floating-search__field-icon" />
+            <div className="floating-search__field-body">
+              <span className="floating-search__field-label">
+                Children <span className="floating-search__field-sublabel">(12–18 yrs)</span>
+              </span>
+              <div className="floating-search__counter">
+                <button
+                  type="button"
+                  className="floating-search__counter-btn"
+                  onClick={() => setChildren((current) => Math.max(0, current - 1))}
+                  aria-label="Decrease children"
+                >
+                  <FiMinus />
+                </button>
+                <span className="floating-search__counter-value">{children}</span>
+                <button
+                  type="button"
+                  className="floating-search__counter-btn"
+                  onClick={() => setChildren((current) => Math.min(8, current + 1))}
+                  aria-label="Increase children"
                 >
                   <FiPlus />
                 </button>
